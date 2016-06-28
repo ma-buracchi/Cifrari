@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cifrari by ma-buracchi</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/ma-buracchi/Cifrari">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/ma-buracchi/Cifrari/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/ma-buracchi/Cifrari/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Cifrari</h1>
+          <p>Implementazioni di alcuni dei più famosi cifrari a chiave condivisa</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/ma-buracchi">ma-buracchi</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="cifrari" class="anchor" href="#cifrari" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cifrari</h1>
+
+<p>Implementazioni di alcuni dei più famosi cifrari a chiave condivisa</p>
+
+<ul>
+<li>Estrarre in una cartella il contenuto del file CIFRARI.zip</li>
+<li>Da linea di comando, spostarsi nella directory che contiene i file appena estratti</li>
+<li>Lanciare l’applicazione tramite il comando java -jar CIFRARI.jar (richiede Java)</li>
+<li>Il programma chiederà quale cifrario si vuole utilizzare. Selezionare il cifrario e premere INVIO oppure selezionare 9 e premere INVIO per chiudere il programma.</li>
+</ul>
+
+<p>1)Shift cypher:</p>
+
+<ul>
+<li>Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Inserire di quante posizioni vogliamo spostare in avanti/indietro ciascuna lettera e premere INVIO (3 è il valore con il quale è impostato lo storico cifrario di Giulio Cesare)</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>2)Substitution cypher:</p>
+
+<ul>
+<li>Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Inserire la permutazione dei 26 caratteri dell'alfabeto che vogliamo usare per effettuare la sostituzione</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>3)Affine cypher:</p>
+
+<ul>
+<li>Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Inserire il valore del coefficiente a (vengono suggeriti i valori ammissibili che devono essere coprimi con 26)</li>
+<li>Inserire il valore del coefficiente b</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>4)Vigenere:</p>
+
+<ul>
+<li>Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Inserire la chiave e premere INVIO</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>5)Hill:</p>
+
+<ul>
+<li>Inserire la lunghezza dei blocchi (m) e premere INVIO</li>
+<li>Inserire il nome del file contenente la matrice da utilizzare come chiave (si trovano nella cartella Key) e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>6)Permutation cypher:</p>
+
+<ul>
+<li>Inserire la lunghezza dei blocchi m (max 10) e premere INVIO</li>
+<li>Inserire la permutazione di interi che vogliamo usare per effettuare la sostituzione</li>
+<li>Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>7)One-Time Pad:</p>
+
+<ul>
+<li>Inserire il nome del file contenente stringa binaria da utilizzare come chiave (si trovano nella cartella Key) e premere INVIO</li>
+<li>Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+
+<p>8)ENIGMA:</p>
+
+<ul>
+<li>Selezionare i tre rotori che vogliamo usare (scegliere tra ’I’,’II’,’III’,’IV’,’V’). Selezionare il rotore desiderato e premere INVIO. </li>
+<li>Selezionare la posizione di partenza di ogni rotore selezionando un intero compreso tra 0 e 25 e premendo INVIO</li>
+<li>inserire il messaggio da cifrare (solo lettere minuscole, senza spazi) e premere INVIO</li>
+<li>Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>

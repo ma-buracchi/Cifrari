@@ -22,12 +22,10 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		boolean flag = true;
-
 		BufferedReader console = new BufferedReader(new InputStreamReader(
 				System.in));
 
-		while (flag) {
+		while (true) {
 
 			try {
 				Util.clearScreen();
@@ -175,12 +173,12 @@ public class Main {
 						Util.clearScreen();
 
 						System.out
-								.print("Inserire coefficiente a (1,3,5,7,11,17,25 sono gli unici numeri coprimi con 26)\n");
+								.print("Inserire coefficiente 'a' (1,3,5,7,11,17,25 sono gli unici numeri coprimi con 26)\n");
 						int a = Integer.parseInt(console.readLine());
 
 						Util.clearScreen();
 
-						System.out.print("Inserire coefficiente b\n");
+						System.out.print("Inserire coefficiente 'b'\n");
 						int b = Integer.parseInt(console.readLine()) % 26;
 
 						Util.clearScreen();
@@ -201,12 +199,12 @@ public class Main {
 						Util.clearScreen();
 
 						System.out
-								.print("Inserire coefficiente a (1,3,5,7,11,17,25 sono gli unici numeri coprimi con 26)\n");
+								.print("Inserire coefficiente 'a' (1,3,5,7,11,17,25 sono gli unici numeri coprimi con 26)\n");
 						a = Integer.parseInt(console.readLine());
 
 						Util.clearScreen();
 
-						System.out.print("Inserire coefficiente b\n");
+						System.out.print("Inserire coefficiente 'b'\n");
 						b = Integer.parseInt(console.readLine()) % 26;
 
 						Util.clearScreen();
@@ -482,8 +480,8 @@ public class Main {
 					break;
 
 				case 9: // chiusura
-					flag = false;
 					console.close();
+					System.exit(0);
 					break;
 
 				default:

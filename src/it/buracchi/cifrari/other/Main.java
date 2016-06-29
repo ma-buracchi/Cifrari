@@ -30,13 +30,13 @@ public class Main {
 			try {
 				Util.clearScreen();
 				System.out
-						.print("Selezionare cifrario da utilizzare:\n1)Shift cypher\t\t2)Substitution cypher\n3)Affine cyphere\t4)Vigenere\n5)Hill\t\t\t6)Permutation cypher\n7)One-Time Pad\t\t8)Enigma\n9)Arresta il programma\n");
+						.print("Selezionare cifrario da utilizzare:\n1)Shift cipher\t\t2)Substitution cipher\n3)Affine ciphere\t4)Vigenere\n5)Hill\t\t\t6)Permutation cipher\n7)One-Time Pad\t\t8)Enigma\n9)Arresta il programma\n");
 
 				int choice = Integer.parseInt(console.readLine());
 
 				switch (choice) {
 
-				case 1: // Shift cypher
+				case 1: // Shift cipher
 
 					Util.clearScreen();
 

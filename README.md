@@ -6,19 +6,19 @@ Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 - Lanciare l’applicazione tramite il comando java -jar CIFRARI.jar (richiede Java)
 - Il programma chiederà quale cifrario si vuole utilizzare. Selezionare il cifrario e premere INVIO oppure selezionare 9 e premere INVIO per chiudere il programma.
 
-1) Shift cypher:
+1) Shift cipher:
 - Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
 - Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
 - Inserire di quante posizioni vogliamo spostare in avanti/indietro ciascuna lettera e premere INVIO (3 è il valore con il quale è impostato lo storico cifrario di Giulio Cesare)
 - Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
 
-2) Substitution cypher:
+2) Substitution cipher:
 - Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
 - Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
 - Inserire la permutazione dei 26 caratteri dell'alfabeto che vogliamo usare per effettuare la sostituzione
 - Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
 
-3) Affine cypher:
+3) Affine cipher:
 - Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
 - Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
 - Inserire il valore del coefficiente a (vengono suggeriti i valori ammissibili che devono essere coprimi con 26)
@@ -37,7 +37,7 @@ Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 - Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
 - Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
 
-6) Permutation cypher:
+6) Permutation cipher:
 - Inserire la lunghezza dei blocchi m (max 10) e premere INVIO
 - Inserire la permutazione di interi che vogliamo usare per effettuare la sostituzione
 - Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO

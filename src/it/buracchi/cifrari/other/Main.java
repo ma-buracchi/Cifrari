@@ -423,7 +423,7 @@ public class Main {
 						otp = new OneTimePad(msg,key);
 
 						System.out.print("Il messaggio decifrato è: "
-								+ otp.coding() + "\n");
+								+ otp.decoding() + "\n");
 						console.readLine();
 						
 						break;

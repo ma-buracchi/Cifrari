@@ -22,41 +22,51 @@ public class OneTimePad {
 		stringToBin(m);
 		createKey();
 	}
-	
+
 	public OneTimePad(String m, String k) {
-		stringToBin(m);
+		msg += m;
 		key += k;
 	}
 
 	private void createKey() {
 		for (int i = 0; i < msg.length(); i++) {
-			key = key + ((int) (Math.random() * 2));
+			key += (int)(Math.random() * 2);
 		}
 	}
-	
-	private void stringToBin(String m){
+
+	private void stringToBin(String m) {
 		for (int i = 0; i < m.length(); i++) {
 			msg += convert[Util.convertLetter(m.charAt(i))];
 		}
 	}
-	
-	private void binToString(String b){
-		for (int i = 0; i < b.length(); i += 5) {
-			String temp = b.substring(i, i+5);
+
+	private void binToString(String b) {
+		int k = b.length() / 5;
+		for (int i = 0; i < k; i++) {
+			String temp = b.substring(i*5, (i+1)*5);
 			for (int j = 0; j < convert.length; j++) {
-				if(temp.equals(convert[j])){
-					res += (char)(j+97);
-				}
+				if (temp.equals(convert[j])) {
+					res += (char) (j + 97);
+				} 
 			}
 		}
 	}
-	
+
 	public String coding() {
+		for (int i = 0; i < msg.length(); i++) {
+			int m = Character.getNumericValue(msg.charAt(i));
+			int k = Character.getNumericValue(key.charAt(i));
+			res += (m ^ k);
+		}
+		return res;
+	}
+	
+	public String decoding() {
 		String temp = "";
 		for (int i = 0; i < msg.length(); i++) {
 			int m = Character.getNumericValue(msg.charAt(i));
 			int k = Character.getNumericValue(key.charAt(i));
-			temp = temp + (m ^ k);
+			temp += (m ^ k);
 		}
 		binToString(temp);
 		return res;

@@ -45,8 +45,9 @@ Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 - Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
 
 7)One-Time Pad:
-- Inserire il nome del file contenente stringa binaria da utilizzare come chiave (si trovano nella cartella Key) e premere INVIO
+- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
 - Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
+- In caso di decifrazione, inserire la chiave utilizzata per cifrare e premere INVIO
 - Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
 
 8)ENIGMA:

@@ -373,24 +373,66 @@ public class Main {
 					break;
 
 				case 7: // One-Time Pad
-
+					
 					Util.clearScreen();
 
-					System.out.print("Inserire chiave\n");
-					String page = console.readLine();
+					System.out
+							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					Util.clearScreen();
+					choice = Integer.parseInt(console.readLine());
 
-					System.out.print("Inserire messaggio da cifrare\n");
-					msg = console.readLine();
+					switch (choice) {
 
-					Util.clearScreen();
+					case 1:
 
-					OneTimePad otp = new OneTimePad(msg, page);
+						Util.clearScreen();
 
-					System.out.print("Il messaggio cifrato è: " + otp.coding()
-							+ "\n");
-					console.readLine();
+						System.out.print("Inserire messaggio da cifrare\n");
+						msg = console.readLine();
+
+						Util.clearScreen();
+
+						OneTimePad otp = new OneTimePad(msg);
+
+						System.out.print("Il messaggio cifrato è: " + otp.coding()
+								+ "\n");
+						System.out.print("La chiave per decifrare questo messaggio è: " + otp.printKey()
+								+ "\n");
+						console.readLine();
+						
+						break;
+
+					case 2:
+
+						Util.clearScreen();
+
+						System.out
+								.print("Inserire messaggio da decifrare\n");
+
+						msg = console.readLine();
+						
+						Util.clearScreen();
+
+						System.out
+								.print("Inserire chiave\n");
+
+						String key = console.readLine();
+
+						Util.clearScreen();
+
+						otp = new OneTimePad(msg,key);
+
+						System.out.print("Il messaggio decifrato è: "
+								+ otp.coding() + "\n");
+						console.readLine();
+						
+						break;
+
+					default:
+						System.out.println("Selezione errata");
+						console.readLine();
+					}
+
 					break;
 
 				case 8: // Enigma

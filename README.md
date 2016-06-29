@@ -46,9 +46,14 @@ Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 
 7) One-Time Pad:
 - Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- In caso di decifrazione, inserire la chiave utilizzata per cifrare e premere INVIO
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+  - In caso di cifratura
+    - Inserire il messaggio da cifrare (solo lettere minuscole senza spazi) e premere INVIO
+    - Viene visualizzato il messaggio cifrato e la chiave da utilizzare per decifrare. Per continuare premere INVIO.
+  - In caso di decifrazione
+    - Inserire il messaggio cifrato e premere INVIO
+    - Inserire la chiave e premere INVIO
+    - Viene visualizzato il messaggio decifrato.
+- Per continuare premere INVIO
 
 8) ENIGMA:
 - Selezionare i tre rotori che vogliamo usare (scegliere tra ’I’,’II’,’III’,’IV’,’V’). Selezionare il rotore desiderato e premere INVIO. 

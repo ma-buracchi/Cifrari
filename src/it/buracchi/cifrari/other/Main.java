@@ -32,22 +32,23 @@ public class Main {
 				System.out
 						.print("Selezionare cifrario da utilizzare:\n1)Shift cipher\t\t2)Substitution cipher\n3)Affine ciphere\t4)Vigenere\n5)Hill\t\t\t6)Permutation cipher\n7)One-Time Pad\t\t8)Enigma\n9)Arresta il programma\n");
 
-				int choice = Integer.parseInt(console.readLine());
+				String choice = console.readLine();
+				//int choice = Integer.parseInt(console.readLine());
 
 				switch (choice) {
 
-				case 1: // Shift cipher
+				case "1": // Shift cipher
 
 					Util.clearScreen();
 
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -64,11 +65,11 @@ public class Main {
 
 						Shift gc = new Shift(msg, shift);
 						System.out.print("Il messaggio cifrato è: "
-								+ gc.coding() + "\n");
+								+ gc.coding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -85,28 +86,28 @@ public class Main {
 
 						gc = new Shift(msg, shift);
 						System.out.print("Il messaggio decifrato è: "
-								+ gc.decoding() + "\n");
+								+ gc.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 
 					break;
 
-				case 2: // Substitution
+				case "2": // Substitution
 
 					Util.clearScreen();
 
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -122,11 +123,11 @@ public class Main {
 
 						Substitution s = new Substitution(permutation, msg);
 						System.out.print("Il messaggio cifrato è: "
-								+ s.coding() + "\n");
+								+ s.coding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -142,28 +143,28 @@ public class Main {
 
 						s = new Substitution(permutation, msg);
 						System.out.print("Il messaggio decifrato è: "
-								+ s.decoding() + "\n");
+								+ s.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 					break;
 
-				case 3: // Affine
+				case "3": // Affine
 
 					Util.clearScreen();
 
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -185,11 +186,11 @@ public class Main {
 
 						Affine aff = new Affine(msg, a, b);
 						System.out.print("Il messaggio cifrato è: "
-								+ aff.coding() + "\n");
+								+ aff.coding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -211,29 +212,29 @@ public class Main {
 
 						aff = new Affine(msg, a, b);
 						System.out.print("Il messaggio decifrato è: "
-								+ aff.decoding() + "\n");
+								+ aff.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 
 					break;
 
-				case 4: // Vigenere
+				case "4": // Vigenere
 
 					Util.clearScreen();
 
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -249,11 +250,11 @@ public class Main {
 
 						Vigenere v = new Vigenere(msg, key);
 						System.out.print("Il messaggio cifrato è: "
-								+ v.coding() + "\n");
+								+ v.coding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -269,16 +270,16 @@ public class Main {
 
 						v = new Vigenere(msg, key);
 						System.out.print("Il messaggio decifrato è: "
-								+ v.decoding() + "\n");
+								+ v.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 					break;
 
-				case 5: // Hill
+				case "5": // Hill
 
 					Util.clearScreen();
 
@@ -301,11 +302,11 @@ public class Main {
 					Hill h = new Hill(m, k, msg);
 
 					System.out.print("Il messaggio cifrato è: " + h.coding()
-							+ "\n");
+							+ "\nPremere INVIO per continuare");
 					console.readLine();
 					break;
 
-				case 6: // Permutation
+				case "6": // Permutation
 
 					Util.clearScreen();
 
@@ -324,11 +325,11 @@ public class Main {
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -342,11 +343,11 @@ public class Main {
 						Permutation p = new Permutation(m, perm, msg);
 
 						System.out.print("Il messaggio cifrato è: "
-								+ p.coding() + "\n");
+								+ p.coding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -360,30 +361,30 @@ public class Main {
 						p = new Permutation(m, perm, msg);
 
 						System.out.print("Il messaggio decifrato è: "
-								+ p.decoding() + "\n");
+								+ p.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						
 						break;
 
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 
 					break;
 
-				case 7: // One-Time Pad
+				case "7": // One-Time Pad
 					
 					Util.clearScreen();
 
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -397,12 +398,12 @@ public class Main {
 						System.out.print("Il messaggio cifrato è: " + otp.coding()
 								+ "\n");
 						System.out.print("La chiave per decifrare questo messaggio è: " + otp.printKey()
-								+ "\n");
+								+ "\nPremere INVIO per continuare");
 						console.readLine();
 						
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -423,19 +424,19 @@ public class Main {
 						otp = new OneTimePad(msg,key);
 
 						System.out.print("Il messaggio decifrato è: "
-								+ otp.decoding() + "\n");
+								+ otp.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						
 						break;
 
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 
 					break;
 
-				case 8: // Enigma
+				case "8": // Enigma
 
 					Util.clearScreen();
 
@@ -517,11 +518,11 @@ public class Main {
 						res = res + temp;
 						// Util.clearScreen();
 					}
-					System.out.print("\nIl messaggio cifrato è: " + res + "\n");
+					System.out.print("\nIl messaggio cifrato è: " + res + "\nPremere INVIO per continuare");
 					console.readLine();
 					break;
 
-				case 9: // chiusura
+				case "9": // chiusura
 					console.close();
 					System.exit(0);
 					break;
@@ -534,11 +535,11 @@ public class Main {
 					System.out
 							.print("Selezionare \n1) per cifrare\n2) per decifrare\n");
 
-					choice = Integer.parseInt(console.readLine());
+					choice = console.readLine();
 
 					switch (choice) {
 
-					case 1:
+					case "1":
 
 						Util.clearScreen();
 
@@ -549,11 +550,11 @@ public class Main {
 
 						Farfallino f = new Farfallino(msg);
 						System.out.print("Il messaggio cifrato è: "
-								+ f.coding() + "\n");
+								+ f.coding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 
-					case 2:
+					case "2":
 
 						Util.clearScreen();
 
@@ -564,12 +565,12 @@ public class Main {
 
 						f = new Farfallino(msg);
 						System.out.print("Il messaggio decifrato è: "
-								+ f.decoding() + "\n");
+								+ f.decoding() + "\nPremere INVIO per continuare");
 						console.readLine();
 						break;
 						
 					default:
-						System.out.println("Selezione errata");
+						System.out.println("Selezione errata, premere INVIO per tornare al menu");
 						console.readLine();
 					}
 

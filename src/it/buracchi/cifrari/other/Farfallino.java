@@ -9,7 +9,7 @@ public class Farfallino {
 
 	String msg;
 
-	Farfallino(String m) {
+	public Farfallino(String m) {
 		msg = m;
 	}
 

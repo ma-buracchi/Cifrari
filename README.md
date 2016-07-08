@@ -2,61 +2,32 @@
 Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 
 - Estrarre in una cartella il contenuto del file CIFRARI.zip
-- Da linea di comando, spostarsi nella directory che contiene i file appena estratti
-- Lanciare l’applicazione tramite il comando java -jar CIFRARI.jar (richiede Java)
-- Il programma chiederà quale cifrario si vuole utilizzare. Selezionare il cifrario e premere INVIO oppure selezionare 9 e premere INVIO per chiudere il programma.
+- Lanciare l’applicazione CIFRARI.jar (richiede Java)
+- Selezionare il cifrario che si vuole utilizzare
 
 1) Shift cipher:
-- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- Inserire di quante posizioni vogliamo spostare in avanti/indietro ciascuna lettera e premere INVIO (3 è il valore con il quale è impostato lo storico cifrario di Giulio Cesare)
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Ogni lettera del messaggio da cifrare/decifrare (solo lettere minuscole) verrà spostata in avanti/indietro del numero di posizioni desiderato (3 è il valore con il quale è impostato lo storico cifrario di Giulio Cesare)
 
 2) Substitution cipher:
-- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- Inserire la permutazione dei 26 caratteri dell'alfabeto che vogliamo usare per effettuare la sostituzione
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Ogni lettera del messaggio da cifrare/decifrare (solo lettere minuscole) verrà sostituita con la corrispondente lettera nella permutazione indicata
 
 3) Affine cipher:
-- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- Inserire il valore del coefficiente a (vengono suggeriti i valori ammissibili che devono essere coprimi con 26)
-- Inserire il valore del coefficiente b
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Ogni lettera (x) del messaggio da cifrare/decifrare (solo lettere minuscole) verrà cifrata come c(x) = (ax + b) mod 26 utilizzando i coefficienti selezionati
 
 4) Vigenere:
-- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- Inserire la chiave e premere INVIO
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Ogni lettera del messaggio da cifrare/decifrare (solo lettere minuscole) verrà cifrata utilizzando la chiave inserita, secondo il cifrario di Vigenere
 
 5) Hill:
-- Inserire la lunghezza dei blocchi (m) e premere INVIO
-- Inserire il nome del file contenente la matrice da utilizzare come chiave (si trovano nella cartella Key) e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Il messaggio da cifrare/decifrare (solo lettere minuscole) verrà cifrato secondo il cifrario di Hill utilizzando le matrici selezionate dall'utente. Possono essere create ed utilizzate nuove matrici (solo di interi) che possono essere salvate nella cartella Key.
 
 6) Permutation cipher:
-- Inserire la lunghezza dei blocchi m (max 10) e premere INVIO
-- Inserire la permutazione di interi che vogliamo usare per effettuare la sostituzione
-- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-- Inserire il messaggio da cifrare/decifrare (solo lettere minuscole senza spazi) e premere INVIO
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Ogni blocco del messaggio di grandezza m (max 10, selezionata dall'utente) verrà cifrato utilizzando la permutazione di interi (da 0 a m-1) inserita.
 
 7) One-Time Pad:
-- Selezionare se si intende cifrare o decifrare il messaggio e premere INVIO
-  - In caso di cifratura
-    - Inserire il messaggio da cifrare (solo lettere minuscole senza spazi) e premere INVIO
-    - Viene visualizzato il messaggio cifrato e la chiave da utilizzare per decifrare. Per continuare premere INVIO.
-  - In caso di decifrazione
-    - Inserire il messaggio cifrato e premere INVIO
-    - Inserire la chiave e premere INVIO
-    - Viene visualizzato il messaggio decifrato.
-- Per continuare premere INVIO
+- In caso di cifratura, il messaggio (solo lettere minuscole) verrà cifrato secondo il cifrario One-Time Pad e verrà fornita la relativa chiave di decifratura
+- In caso di decifratura, il messaggio verrà decifrato secondo il cifrario One-Time Pad, utilizzando la chiave inserita
 
 8) ENIGMA:
-- Selezionare i tre rotori che vogliamo usare (scegliere tra ’I’,’II’,’III’,’IV’,’V’). Selezionare il rotore desiderato e premere INVIO. 
-- Selezionare la posizione di partenza di ogni rotore selezionando un intero compreso tra 0 e 25 e premendo INVIO
-- inserire il messaggio da cifrare (solo lettere minuscole, senza spazi) e premere INVIO
-- Viene visualizzato il messaggio cifrato/decifrato. Per continuare premere INVIO
+- Il messaggio da cifrare/decifrare (solo lettere minuscole) verrà cifrato/decifrato secondo il cifrario ENIGMA utilizzando la configurazione dei rotori selezionata dall'utente.
+
+9) ?????????

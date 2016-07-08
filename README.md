@@ -1,10 +1,6 @@
 # Cifrari
 Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 
-- Estrarre in una cartella il contenuto del file CIFRARI.zip
-- Lanciare l’applicazione CIFRARI.jar (richiede Java)
-- Selezionare il cifrario che si vuole utilizzare
-
 1) Shift cipher:
 - Ogni lettera del messaggio da cifrare/decifrare (solo lettere minuscole) verrà spostata in avanti/indietro del numero di posizioni desiderato (3 è il valore con il quale è impostato lo storico cifrario di Giulio Cesare)
 

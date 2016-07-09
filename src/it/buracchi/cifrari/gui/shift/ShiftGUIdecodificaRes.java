@@ -3,8 +3,6 @@ package it.buracchi.cifrari.gui.shift;
 import it.buracchi.cifrari.substitution.Shift;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -19,8 +17,6 @@ public class ShiftGUIdecodificaRes extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private static String msg = "";
-	private static int shift = 0;
 
 	/**
 	 * Create the frame.

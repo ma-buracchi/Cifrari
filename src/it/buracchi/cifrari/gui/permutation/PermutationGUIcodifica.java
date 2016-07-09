@@ -52,7 +52,7 @@ public class PermutationGUIcodifica extends JFrame {
 		txtInserireLunghezzaDei.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				txtpnInserireIlMessaggio.setText("");
+				txtInserireLunghezzaDei.setText("");
 			}
 		});
 		txtInserireLunghezzaDei.setHorizontalAlignment(SwingConstants.CENTER);

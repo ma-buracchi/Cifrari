@@ -23,6 +23,7 @@ public class EnigmaGUIres extends JFrame {
 	public EnigmaGUIres(String m, String r1, int p1, String r2, int p2, String r3, int p3) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

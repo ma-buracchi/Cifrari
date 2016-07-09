@@ -67,6 +67,7 @@ public class Cifrari_GUI {
 		frmCifrari = new JFrame();
 		frmCifrari.setTitle("Cifrari");
 		frmCifrari.setBounds(100, 100, 450, 300);
+		frmCifrari.setLocationRelativeTo(null);
 		frmCifrari.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCifrari.getContentPane().setLayout(new GridLayout(0, 1, 0, 0));
 		

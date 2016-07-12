@@ -66,6 +66,7 @@ public class VigenereGUIdecodifica extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String key = txtInserireLaChiave.getText();
+				dispose();
 				VigenereGUIdecodificaRes vgn = new VigenereGUIdecodificaRes(msg,key);
 				vgn.setVisible(true);
 			}

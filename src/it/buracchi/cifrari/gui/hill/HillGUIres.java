@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class HillGUIres extends JFrame {
 
@@ -38,8 +38,9 @@ public class HillGUIres extends JFrame {
 		
 		Hill h = new Hill(m,k,msg);
 		
-		JTextPane textPane = new JTextPane();
+		JTextArea textPane = new JTextArea();
 		textPane.setBounds(10, 36, 414, 214);
+		textPane.setLineWrap(true);
 		textPane.setText(h.coding());
 		contentPane.add(textPane);
 	}

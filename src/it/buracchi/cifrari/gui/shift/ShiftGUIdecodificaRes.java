@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class ShiftGUIdecodificaRes extends JFrame {
 
@@ -37,7 +37,8 @@ public class ShiftGUIdecodificaRes extends JFrame {
 		
 		Shift gc = new Shift(m, s);
 		
-		JTextPane textPane = new JTextPane();
+		JTextArea textPane = new JTextArea();
+		textPane.setLineWrap(true);
 		textPane.setText(gc.decoding());
 		contentPane.add(textPane, BorderLayout.CENTER);
 	}

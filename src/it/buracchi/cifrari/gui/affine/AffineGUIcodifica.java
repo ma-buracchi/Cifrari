@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import java.awt.Choice;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -36,7 +36,7 @@ public class AffineGUIcodifica extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnInserireMessaggioDa = new JTextPane();
+		JTextArea txtpnInserireMessaggioDa = new JTextArea();
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -45,6 +45,7 @@ public class AffineGUIcodifica extends JFrame {
 		});
 		txtpnInserireMessaggioDa.setText("Inserire messaggio da cifrare");
 		txtpnInserireMessaggioDa.setBounds(10, 11, 414, 163);
+		txtpnInserireMessaggioDa.setLineWrap(true);
 		contentPane.add(txtpnInserireMessaggioDa);
 		
 		Choice choice = new Choice();
@@ -71,7 +72,7 @@ public class AffineGUIcodifica extends JFrame {
 		JButton btnCodifica = new JButton("Codifica");
 		btnCodifica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireMessaggioDa.getText().replace(" ", "");
+				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				int a = Integer.parseInt(choice.getSelectedItem());
 				int b = Integer.parseInt(txtInserireParametrob.getText());
 				AffineGUIcodificaRes afnw = new AffineGUIcodificaRes(msg,a,b);

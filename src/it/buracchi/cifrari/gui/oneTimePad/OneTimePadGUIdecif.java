@@ -6,7 +6,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
@@ -48,7 +48,7 @@ public class OneTimePadGUIdecif extends JFrame {
 		contentPane.add(txtInserireChiave);
 		txtInserireChiave.setColumns(10);
 		
-		JTextPane txtpnInserireMessaggioDa = new JTextPane();
+		JTextArea txtpnInserireMessaggioDa = new JTextArea();
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -57,12 +57,13 @@ public class OneTimePadGUIdecif extends JFrame {
 		});
 		txtpnInserireMessaggioDa.setText("Inserire messaggio da decifrare");
 		txtpnInserireMessaggioDa.setBounds(10, 11, 414, 174);
+		txtpnInserireMessaggioDa.setLineWrap(true);
 		contentPane.add(txtpnInserireMessaggioDa);
 		
 		JButton btnDecifra = new JButton("Decifra");
 		btnDecifra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireMessaggioDa.getText().replace(" ", "");
+				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String key = txtInserireChiave.getText();
 				dispose();
 				OneTimePadGUIdecifRes otp = new OneTimePadGUIdecifRes(msg,key);

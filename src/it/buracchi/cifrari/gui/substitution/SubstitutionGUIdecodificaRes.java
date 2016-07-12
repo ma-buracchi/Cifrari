@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class SubstitutionGUIdecodificaRes extends JFrame {
 
@@ -38,7 +38,8 @@ public class SubstitutionGUIdecodificaRes extends JFrame {
 		
 		Substitution sub = new Substitution(p, m);
 		
-		JTextPane textPane = new JTextPane();
+		JTextArea textPane = new JTextArea();
+		textPane.setLineWrap(true);
 		textPane.setText(sub.decoding());
 		contentPane.add(textPane, BorderLayout.CENTER);
 	}

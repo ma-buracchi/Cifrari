@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Button;
 import java.awt.Choice;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
@@ -82,7 +82,7 @@ public class EnigmaGUI extends JFrame {
 		}
 		contentPane.add(choice_5);
 		
-		JTextPane txtpnInserireIlMessaggio = new JTextPane();
+		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -91,13 +91,14 @@ public class EnigmaGUI extends JFrame {
 		});
 		txtpnInserireIlMessaggio.setText("Inserire il messaggio da cifrare");
 		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 160);
+		txtpnInserireIlMessaggio.setLineWrap(true);
 		contentPane.add(txtpnInserireIlMessaggio);
 		
 		Button button = new Button("Cifrare/Decifrare");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				String msg = txtpnInserireIlMessaggio.getText().replace(" ", "");
+				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String r1 = choice_3.getSelectedItem();
 				String r2 = choice_4.getSelectedItem();
 				String r3 = choice_5.getSelectedItem();

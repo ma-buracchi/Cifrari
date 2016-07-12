@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class AffineGUIdecodificaRes extends JFrame {
 
@@ -38,8 +38,9 @@ public class AffineGUIdecodificaRes extends JFrame {
 		
 		Affine aff = new Affine(m,ca,cb);
 		
-		JTextPane textPane = new JTextPane();
+		JTextArea textPane = new JTextArea();
 		textPane.setBounds(10, 36, 414, 214);
+		textPane.setLineWrap(true);
 		textPane.setText(aff.decoding());
 		contentPane.add(textPane);
 	}

@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class PermutationGUIdecodificaRes extends JFrame {
 
@@ -37,8 +37,9 @@ public class PermutationGUIdecodificaRes extends JFrame {
 		
 		Permutation perm = new Permutation(m,p,msg);
 		
-		JTextPane textPane = new JTextPane();
+		JTextArea textPane = new JTextArea();
 		textPane.setBounds(20, 36, 414, 214);
+		textPane.setLineWrap(true);
 		textPane.setText(perm.decoding());
 		contentPane.add(textPane);
 	}

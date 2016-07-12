@@ -6,7 +6,7 @@ import javax.swing.border.EmptyBorder;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -36,7 +36,7 @@ public class SubstitutionGUIcodifica extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnInserireIlMessaggio = new JTextPane();
+		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -45,6 +45,7 @@ public class SubstitutionGUIcodifica extends JFrame {
 		});
 		txtpnInserireIlMessaggio.setText("Inserire il messaggio da cifrare");
 		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 177);
+		txtpnInserireIlMessaggio.setLineWrap(true);
 		contentPane.add(txtpnInserireIlMessaggio);
 		
 		txtInserireLaPermutazione = new JTextField();
@@ -64,7 +65,7 @@ public class SubstitutionGUIcodifica extends JFrame {
 		btnCifrare.setBounds(10, 230, 414, 20);
 		btnCifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireIlMessaggio.getText().replace(" ", "");
+				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String perm = txtInserireLaPermutazione.getText();
 				SubstitutionGUIcodificaRes nw = new SubstitutionGUIcodificaRes(perm,msg);
 				dispose();

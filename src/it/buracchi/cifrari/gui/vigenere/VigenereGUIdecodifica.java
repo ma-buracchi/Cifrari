@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
@@ -49,7 +49,7 @@ public class VigenereGUIdecodifica extends JFrame {
 		contentPane.add(txtInserireLaChiave);
 		txtInserireLaChiave.setColumns(10);
 		
-		JTextPane txtpnInserireIlMessaggio = new JTextPane();
+		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -58,12 +58,13 @@ public class VigenereGUIdecodifica extends JFrame {
 		});
 		txtpnInserireIlMessaggio.setText("Inserire il messaggio da decifrare");
 		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 174);
+		txtpnInserireIlMessaggio.setLineWrap(true);
 		contentPane.add(txtpnInserireIlMessaggio);
 		
 		JButton btnCodifica = new JButton("Decodifica");
 		btnCodifica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireIlMessaggio.getText().replace(" ", "");
+				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String key = txtInserireLaChiave.getText();
 				VigenereGUIdecodificaRes vgn = new VigenereGUIdecodificaRes(msg,key);
 				vgn.setVisible(true);

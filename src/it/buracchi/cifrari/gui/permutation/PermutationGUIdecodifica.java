@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -37,7 +37,7 @@ public class PermutationGUIdecodifica extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnInserireIlMessaggio = new JTextPane();
+		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -46,6 +46,7 @@ public class PermutationGUIdecodifica extends JFrame {
 		});
 		txtpnInserireIlMessaggio.setText("Inserire il messaggio da decifrare");
 		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 174);
+		txtpnInserireIlMessaggio.setLineWrap(true);
 		contentPane.add(txtpnInserireIlMessaggio);
 		
 		txtInserireLunghezzaDei = new JTextField();
@@ -77,7 +78,7 @@ public class PermutationGUIdecodifica extends JFrame {
 		JButton btnCodifica = new JButton("Decodifica");
 		btnCodifica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireIlMessaggio.getText().replace(" ", "");
+				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				int m = Integer.parseInt(txtInserireLunghezzaDei.getText());
 				String perm = txtInserirePermutazioneInteri.getText();
 				PermutationGUIdecodificaRes penw = new PermutationGUIdecodificaRes(m,perm,msg);

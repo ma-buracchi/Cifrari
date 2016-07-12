@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 public class OneTimePadGUIcifRes extends JFrame {
 
@@ -42,13 +42,15 @@ public class OneTimePadGUIcifRes extends JFrame {
 		lblLaChiaveDi.setBounds(10, 133, 414, 20);
 		contentPane.add(lblLaChiaveDi);
 		
-		JTextPane textPane = new JTextPane();
+		JTextArea textPane = new JTextArea();
 		textPane.setBounds(10, 36, 414, 86);
+		textPane.setLineWrap(true);
 		textPane.setText(otp.coding());
 		contentPane.add(textPane);
 		
-		JTextPane textPane_1 = new JTextPane();
+		JTextArea textPane_1 = new JTextArea();
 		textPane_1.setBounds(10, 164, 414, 86);
+		textPane_1.setLineWrap(true);
 		textPane_1.setText(otp.printKey());
 		contentPane.add(textPane_1);
 	}

@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -36,7 +36,7 @@ public class HillGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnInserireMessaggioDa = new JTextPane();
+		JTextArea txtpnInserireMessaggioDa = new JTextArea();
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -45,6 +45,7 @@ public class HillGUI extends JFrame {
 		});
 		txtpnInserireMessaggioDa.setText("Inserire messaggio da cifrare/decifrare");
 		txtpnInserireMessaggioDa.setBounds(10, 11, 414, 174);
+		txtpnInserireMessaggioDa.setLineWrap(true);
 		contentPane.add(txtpnInserireMessaggioDa);
 		
 		txtInserireChiave = new JTextField();
@@ -77,7 +78,7 @@ public class HillGUI extends JFrame {
 		btnCodificadecodifica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int m = Integer.parseInt(txtInserireChiave.getText());
-				String msg = txtpnInserireMessaggioDa.getText().replace(" ", "");
+				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String k = textField.getText();
 				dispose();
 				HillGUIres hill = new HillGUIres(m,k,msg);

@@ -3,7 +3,7 @@ package it.buracchi.cifrari.gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -31,7 +31,7 @@ public class FarfaGUIdecif extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnInserireMessaggioDa = new JTextPane();
+		JTextArea txtpnInserireMessaggioDa = new JTextArea();
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -39,6 +39,7 @@ public class FarfaGUIdecif extends JFrame {
 			}
 		});
 		txtpnInserireMessaggioDa.setBounds(5, 5, 424, 211);
+		txtpnInserireMessaggioDa.setLineWrap(true);
 		txtpnInserireMessaggioDa.setText("Inserire messaggio da decifrare");
 		contentPane.add(txtpnInserireMessaggioDa);
 		
@@ -46,7 +47,7 @@ public class FarfaGUIdecif extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				String msg = txtpnInserireMessaggioDa.getText().replace(" ", "");
+				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				FarfaGUIdecifRes fres = new FarfaGUIdecifRes(msg);
 				fres.setVisible(true);
 			}

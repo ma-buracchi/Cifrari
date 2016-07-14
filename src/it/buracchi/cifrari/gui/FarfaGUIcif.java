@@ -1,5 +1,11 @@
+/*
+ *  Created on: July 14, 2016
+ *      Author: Marco Buracchi
+ */
+
 package it.buracchi.cifrari.gui;
 
+import it.buracchi.cifrari.other.Farfallino;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -38,21 +44,41 @@ public class FarfaGUIcif extends JFrame {
 				txtpnInserireMessaggioDa.setText("");
 			}
 		});
-		txtpnInserireMessaggioDa.setBounds(5, 5, 424, 211);
+		txtpnInserireMessaggioDa.setBounds(10, 11, 414, 179);
 		txtpnInserireMessaggioDa.setLineWrap(true);
-		txtpnInserireMessaggioDa.setText("Inserire messaggio da cifrare");
+		txtpnInserireMessaggioDa.setText("Inserire messaggio da cifrare/decifrare");
 		contentPane.add(txtpnInserireMessaggioDa);
 		
-		JButton btnNewButton = new JButton("Codifica");
+		JButton btnNewButton = new JButton("Cifra");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
 				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
-				FarfaGUIcifRes fres = new FarfaGUIcifRes(msg);
-				fres.setVisible(true);
+				Farfallino f = new Farfallino(msg);
+				txtpnInserireMessaggioDa.setText(f.coding());
 			}
 		});
-		btnNewButton.setBounds(5, 227, 419, 23);
+		btnNewButton.setBounds(10, 200, 202, 20);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Decifra");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
+				Farfallino f = new Farfallino(msg);
+				txtpnInserireMessaggioDa.setText(f.decoding());
+			}
+		});
+		btnNewButton_1.setBounds(222, 200, 202, 20);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Torna al menu");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MenuGUI.main(null);
+				dispose();
+			}
+		});
+		btnNewButton_2.setBounds(10, 230, 414, 20);
+		contentPane.add(btnNewButton_2);
 	}
 }

@@ -5,7 +5,6 @@
 
 package it.buracchi.cifrari.other;
 
-import it.buracchi.cifrari.enigma.Enigma;
 import it.buracchi.cifrari.hill.Hill;
 import it.buracchi.cifrari.hill.Permutation;
 import it.buracchi.cifrari.onetimepad.OneTimePad;
@@ -439,8 +438,12 @@ public class Main {
 				case "8": // Enigma
 
 					Util.clearScreen();
+					
+					System.out.print("ENIGMA da modificare\n");
+					
+					break;
 
-					System.out.print("Inserire rotore veloce\n");
+					/*System.out.print("Inserire rotore veloce\n");
 					String r1 = console.readLine();
 					Util.clearScreen();
 					while (!Util.checkRotor(r1)) {
@@ -520,7 +523,7 @@ public class Main {
 					}
 					System.out.print("\nIl messaggio cifrato è: " + res + "\nPremere INVIO per continuare");
 					console.readLine();
-					break;
+					break;*/
 
 				case "9": // chiusura
 					console.close();

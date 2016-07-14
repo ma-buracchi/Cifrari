@@ -40,29 +40,23 @@ public class Enigma {
 		}
 	}
 
-	public char code(char text) {
-
-		rotate(); // rotazione dei rotori
-		
-		char res = plugboard.code(text); // entra nella plugboard
-		res = rotFast.going(res); // entra nel rotore veloce
-		res = rotMed.going(res); // nel medio
-		res = rotSlow.going(res); // nel lento
-		res = reflector.code(res); // nel reflector
-		res = rotSlow.comeBack(res);// torna nel rotore lento
-		res = rotMed.comeBack(res); // nel medio
-		res = rotFast.comeBack(res);// nel veloce
-		res = plugboard.code(res); // nella plugboard
-		//System.out.print(text + " ------> " + res + "\n");
+	public String code(String msg) {
+		String res = "";
+		for (int i = 0; i < msg.length(); i++) {
+			rotate(); // rotazione dei rotori
+			char text = msg.charAt(i);
+			char temp = plugboard.code(text); // entra nella plugboard
+			temp = rotFast.going(temp); // entra nel rotore veloce
+			temp = rotMed.going(temp); // nel medio
+			temp = rotSlow.going(temp); // nel lento
+			temp = reflector.code(temp); // nel reflector
+			temp = rotSlow.comeBack(temp);// torna nel rotore lento
+			temp = rotMed.comeBack(temp); // nel medio
+			temp = rotFast.comeBack(temp);// nel veloce
+			temp = plugboard.code(temp); // nella plugboard
+			res = res + temp;
+		}
 		return(res);
-
-		
-		/*try {
-			Thread.sleep(400); // "velocita' di decodifica"
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 	}
 
 	private void rotate() {

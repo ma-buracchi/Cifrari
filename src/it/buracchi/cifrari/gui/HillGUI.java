@@ -37,7 +37,7 @@ public class HillGUI {
 		JTextArea txtpnInserireMessaggioDa = new JTextArea();
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireMessaggioDa.setText("");
 			}
 		});
@@ -49,7 +49,7 @@ public class HillGUI {
 		txtInserireChiave = new JTextField();
 		txtInserireChiave.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtInserireChiave.setText("");
 			}
 		});
@@ -62,7 +62,7 @@ public class HillGUI {
 		textField = new JTextField();
 		textField.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				textField.setText("");
 			}
 		});

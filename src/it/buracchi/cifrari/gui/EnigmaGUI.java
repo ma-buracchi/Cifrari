@@ -84,7 +84,7 @@ public class EnigmaGUI {
 		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 119);
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireIlMessaggio.setText("");
 			}
 		});

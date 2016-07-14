@@ -39,7 +39,7 @@ public class AffineGUI {
 		JTextArea txtpnInserireMessaggioDa = new JTextArea();
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireMessaggioDa.setText("");
 			}
 		});
@@ -59,7 +59,7 @@ public class AffineGUI {
 		txtInserireParametrob = new JTextField();
 		txtInserireParametrob.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtInserireParametrob.setText("");
 			}
 		});

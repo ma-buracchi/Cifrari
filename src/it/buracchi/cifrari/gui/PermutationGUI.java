@@ -38,7 +38,7 @@ public class PermutationGUI {
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireIlMessaggio.setText("");
 			}
 		});
@@ -50,7 +50,7 @@ public class PermutationGUI {
 		txtInserireLunghezzaDei = new JTextField();
 		txtInserireLunghezzaDei.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtInserireLunghezzaDei.setText("");
 			}
 		});
@@ -63,7 +63,7 @@ public class PermutationGUI {
 		txtInserirePermutazioneInteri = new JTextField();
 		txtInserirePermutazioneInteri.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtInserirePermutazioneInteri.setText("");
 			}
 		});

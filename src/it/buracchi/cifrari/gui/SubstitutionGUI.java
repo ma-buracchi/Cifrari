@@ -34,7 +34,7 @@ public class SubstitutionGUI {
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireIlMessaggio.setText("");
 			}
 		});
@@ -46,7 +46,7 @@ public class SubstitutionGUI {
 		txtInserireLaPermutazione = new JTextField();
 		txtInserireLaPermutazione.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtInserireLaPermutazione.setText("");
 			}
 		});

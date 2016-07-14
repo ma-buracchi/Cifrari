@@ -33,7 +33,7 @@ public class FarfaGUI {
 		contentPane.add(txtpnInserireMessaggioDa);
 		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			public void mousePressed(MouseEvent arg0) {
 				txtpnInserireMessaggioDa.setText("");
 			}
 		});

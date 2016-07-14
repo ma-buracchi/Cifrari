@@ -32,7 +32,7 @@ public class OneTimePadGUI {
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireIlMessaggio.setText("");
 			}
 		});
@@ -44,7 +44,7 @@ public class OneTimePadGUI {
 		JTextArea txtrInserireLaChiave = new JTextArea();
 		txtrInserireLaChiave.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
+			public void mousePressed(MouseEvent arg0) {
 				txtrInserireLaChiave.setText("");
 			}
 		});

@@ -31,7 +31,7 @@ public class ShiftGUI extends JFrame {
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireIlMessaggio.setText("");
 			}
 		});

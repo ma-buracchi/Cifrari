@@ -37,7 +37,7 @@ public class VigenereGUI {
 		txtInserireLaChiave = new JTextField();
 		txtInserireLaChiave.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtInserireLaChiave.setText("");
 			}
 		});
@@ -50,7 +50,7 @@ public class VigenereGUI {
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				txtpnInserireIlMessaggio.setText("");
 			}
 		});

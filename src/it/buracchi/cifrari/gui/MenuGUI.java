@@ -52,7 +52,7 @@ public class MenuGUI {
 					menu.add(lblSelezionareIlCifrario);
 					lblSelezionareIlCifrario.addMouseListener(new MouseAdapter() {
 						@Override
-						public void mouseClicked(MouseEvent arg0) {
+						public void mousePressed(MouseEvent arg0) {
 							FarfaGUI farfa = new FarfaGUI();
 							contentPane = farfa.getPanel();
 							frmCifrari.setContentPane(contentPane);
@@ -148,10 +148,10 @@ public class MenuGUI {
 							contentPane.setVisible(true);
 						}
 					});
+					
 					frmCifrari.setContentPane(menu);
 					frmCifrari.setVisible(true);
 				}
-				
 				 catch (Exception e) {
 					e.printStackTrace();
 				}

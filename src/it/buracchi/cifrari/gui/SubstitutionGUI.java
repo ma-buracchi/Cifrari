@@ -6,7 +6,7 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.substitution.Substitution;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
@@ -18,12 +18,8 @@ import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class SubstitutionGUI extends JFrame {
+public class SubstitutionGUI {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtInserireLaPermutazione;
 
@@ -31,13 +27,8 @@ public class SubstitutionGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public SubstitutionGUI() {
-		setTitle("SUBSTITUTION CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
@@ -80,8 +71,7 @@ public class SubstitutionGUI extends JFrame {
 		JButton btnTornaAlMenu = new JButton("Torna al menu");
 		btnTornaAlMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
 		btnTornaAlMenu.setBounds(10, 230, 414, 20);
@@ -99,6 +89,10 @@ public class SubstitutionGUI extends JFrame {
 		btnDecifrare.setBounds(222, 200, 202, 20);
 		contentPane.add(btnDecifrare);
 
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 
 }

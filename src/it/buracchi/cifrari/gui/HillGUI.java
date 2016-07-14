@@ -6,7 +6,7 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.hill.Hill;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
@@ -18,12 +18,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class HillGUI extends JFrame {
+public class HillGUI {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtInserireChiave;
 	private JTextField textField;
@@ -34,13 +30,8 @@ public class HillGUI extends JFrame {
 	 */
 	
 	public HillGUI() {
-		setTitle("HILL CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea txtpnInserireMessaggioDa = new JTextArea();
@@ -97,12 +88,15 @@ public class HillGUI extends JFrame {
 		btnNewButton = new JButton("Torna al menu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
 		btnNewButton.setBounds(10, 230, 414, 20);
 		contentPane.add(btnNewButton);
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 
 }

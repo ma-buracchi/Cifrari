@@ -6,7 +6,7 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.onetimepad.OneTimePad;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
@@ -16,12 +16,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class OneTimePadGUI extends JFrame {
+public class OneTimePadGUI {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 
 	/**
@@ -29,13 +25,8 @@ public class OneTimePadGUI extends JFrame {
 	 */
 	
 	public OneTimePadGUI() {
-		setTitle("ONE-TIME PAD CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
@@ -77,8 +68,7 @@ public class OneTimePadGUI extends JFrame {
 		JButton btnTornaAlMenu = new JButton("Torna al menu");
 		btnTornaAlMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
 		btnTornaAlMenu.setBounds(10, 230, 414, 20);
@@ -95,5 +85,9 @@ public class OneTimePadGUI extends JFrame {
 		});
 		btnNewButton_1.setBounds(222, 200, 202, 20);
 		contentPane.add(btnNewButton_1);
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 }

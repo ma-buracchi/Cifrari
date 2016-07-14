@@ -6,7 +6,7 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.hill.Permutation;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
@@ -18,12 +18,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class PermutationGUI extends JFrame {
+public class PermutationGUI {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtInserireLunghezzaDei;
 	private JTextField txtInserirePermutazioneInteri;
@@ -35,13 +31,8 @@ public class PermutationGUI extends JFrame {
 	 */
 	
 	public PermutationGUI() {
-		setTitle("PERMUTATION CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
@@ -98,8 +89,7 @@ public class PermutationGUI extends JFrame {
 		btnTornaAlMenu = new JButton("Torna al menu");
 		btnTornaAlMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
 		btnTornaAlMenu.setBounds(10, 230, 414, 20);
@@ -117,6 +107,10 @@ public class PermutationGUI extends JFrame {
 		});
 		btnDecifra.setBounds(222, 200, 202, 20);
 		contentPane.add(btnDecifra);
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 
 }

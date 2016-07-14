@@ -6,25 +6,24 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.substitution.Affine;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
+
 import java.awt.Choice;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class AffineGUI extends JFrame {
+public class AffineGUI {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtInserireParametrob;
 	private String[] ch = {"1","3","5","7","9","11","15","17","19","21","23","25"};
@@ -33,13 +32,8 @@ public class AffineGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public AffineGUI() {
-			setTitle("AFFINE CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JTextArea txtpnInserireMessaggioDa = new JTextArea();
@@ -104,11 +98,14 @@ public class AffineGUI extends JFrame {
 		JButton btnNewButton = new JButton("Torna al menu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
 		btnNewButton.setBounds(10, 230, 414, 20);
 		contentPane.add(btnNewButton);
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 }

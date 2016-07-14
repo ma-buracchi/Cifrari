@@ -21,16 +21,8 @@ public class ShiftGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
-	/**
-	 * Create the frame.
-	 */
 	
 	public ShiftGUI() {
-		setTitle("SHIFT CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -83,14 +75,15 @@ public class ShiftGUI extends JFrame {
 		JButton btnNewButton = new JButton("Torna al menu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
 		btnNewButton.setBounds(10, 230, 414, 20);
-		contentPane.add(btnNewButton);
-		
-		
+		contentPane.add(btnNewButton);		
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 
 }

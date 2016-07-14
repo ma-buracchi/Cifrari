@@ -6,7 +6,7 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.enigma.Enigma;
-import javax.swing.JFrame;
+
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Choice;
@@ -15,14 +15,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JButton;
 
-public class EnigmaGUI extends JFrame {
+public class EnigmaGUI {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private String[] rotor = {"I","II","III","IV","V"};
 
@@ -31,14 +28,8 @@ public class EnigmaGUI extends JFrame {
 	 */
 	
 	public EnigmaGUI() {
-		setTitle("ENIGMA CIPHER");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		Choice choice = new Choice();
 		choice.setBounds(10, 170, 130, 20);
@@ -46,6 +37,7 @@ public class EnigmaGUI extends JFrame {
 		for(int j = 0; j < 26; j++){
 			choice.add(""+j);
 		}
+		contentPane.setLayout(null);
 		contentPane.add(choice);
 		
 		Choice choice_1 = new Choice();
@@ -89,6 +81,7 @@ public class EnigmaGUI extends JFrame {
 		contentPane.add(choice_5);
 		
 		JTextArea txtpnInserireIlMessaggio = new JTextArea();
+		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 119);
 		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -96,21 +89,20 @@ public class EnigmaGUI extends JFrame {
 			}
 		});
 		txtpnInserireIlMessaggio.setText("Inserire il messaggio da cifrare");
-		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 119);
 		txtpnInserireIlMessaggio.setLineWrap(true);
 		contentPane.add(txtpnInserireIlMessaggio);
 		
 		JButton btnTornaAlMenu = new JButton("Torna al menu");
+		btnTornaAlMenu.setBounds(10, 230, 414, 20);
 		btnTornaAlMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MenuGUI.main(null);
-				dispose();
+				MenuGUI.reload();
 			}
 		});
-		btnTornaAlMenu.setBounds(10, 230, 414, 20);
 		contentPane.add(btnTornaAlMenu);
 		
 		JButton btnCifraredecifrare = new JButton("Cifrare/Decifrare");
+		btnCifraredecifrare.setBounds(10, 200, 414, 20);
 		btnCifraredecifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
@@ -124,8 +116,11 @@ public class EnigmaGUI extends JFrame {
 				txtpnInserireIlMessaggio.setText(enigma.code(msg));
 			}
 		});
-		btnCifraredecifrare.setBounds(10, 200, 414, 20);
 		contentPane.add(btnCifraredecifrare);
+	}
+	
+	public JPanel getPanel(){
+		return contentPane;
 	}
 
 }

@@ -11,23 +11,17 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
-
 import java.awt.Choice;
-
 import javax.swing.JButton;
 import javax.swing.JTextField;
-
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-
 import javax.swing.JSplitPane;
-
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JScrollPane;
 
 public class AffineGUI {
@@ -35,8 +29,7 @@ public class AffineGUI {
 	private JPanel contentPane;
 	private String[] ch = {"Scegliere coefficiente a","1","3","5","7","9","11","15","17","19","21","23","25"};
 	private JTextField txtCoefficienteB;
-
-		/**
+	/**
 	 * Create the frame.
 	 */
 	public AffineGUI() {
@@ -106,9 +99,9 @@ public class AffineGUI {
 		gbc_splitPane.gridy = 2;
 		contentPane.add(splitPane, gbc_splitPane);
 		
-		JButton btnNewButton = new JButton("Codifica");
-		splitPane.setLeftComponent(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCifrare = new JButton("Cifrare");
+		splitPane.setLeftComponent(btnCifrare);
+		btnCifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				int a = Integer.parseInt(choice.getSelectedItem());
@@ -118,9 +111,9 @@ public class AffineGUI {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("Decodifica");
-		splitPane.setRightComponent(btnNewButton_1);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnDecifrare = new JButton("Decifrare");
+		splitPane.setRightComponent(btnDecifrare);
+		btnDecifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				int a = Integer.parseInt(choice.getSelectedItem());
@@ -130,17 +123,17 @@ public class AffineGUI {
 			}
 		});
 		
-		JButton btnNewButton_2 = new JButton("Torna al menu");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnMenu = new JButton("Torna al menu");
+		btnMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MenuGUI.reload();
 			}
 		});
-		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
-		gbc_btnNewButton_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_btnNewButton_2.gridx = 0;
-		gbc_btnNewButton_2.gridy = 3;
-		contentPane.add(btnNewButton_2, gbc_btnNewButton_2);
+		GridBagConstraints gbc_btnMenu = new GridBagConstraints();
+		gbc_btnMenu.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnMenu.gridx = 0;
+		gbc_btnMenu.gridy = 3;
+		contentPane.add(btnMenu, gbc_btnMenu);
 	}
 	
 	public JPanel getPanel(){

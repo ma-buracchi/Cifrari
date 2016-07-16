@@ -70,9 +70,9 @@ public class FarfaGUI {
 		gbc_splitPane.gridy = 1;
 		contentPane.add(splitPane, gbc_splitPane);
 		
-		JButton btnNewButton = new JButton("Cifra");
-		splitPane.setLeftComponent(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCifrare = new JButton("Cifrare");
+		splitPane.setLeftComponent(btnCifrare);
+		btnCifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				Farfallino farfa = new Farfallino(msg);
@@ -80,9 +80,9 @@ public class FarfaGUI {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("Decifra");
-		splitPane.setRightComponent(btnNewButton_1);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnDecifrare = new JButton("Decifrare");
+		splitPane.setRightComponent(btnDecifrare);
+		btnDecifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				Farfallino farfa = new Farfallino(msg);
@@ -90,17 +90,17 @@ public class FarfaGUI {
 			}
 		});
 		
-		JButton btnNewButton_2 = new JButton("Torna al menu");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnMenu = new JButton("Torna al menu");
+		btnMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MenuGUI.reload();
 			}
 		});
-		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
-		gbc_btnNewButton_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_btnNewButton_2.gridx = 0;
-		gbc_btnNewButton_2.gridy = 2;
-		contentPane.add(btnNewButton_2, gbc_btnNewButton_2);
+		GridBagConstraints gbc_btnMenu = new GridBagConstraints();
+		gbc_btnMenu.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnMenu.gridx = 0;
+		gbc_btnMenu.gridy = 2;
+		contentPane.add(btnMenu, gbc_btnMenu);
 	}
 	
 	public JPanel getPanel(){

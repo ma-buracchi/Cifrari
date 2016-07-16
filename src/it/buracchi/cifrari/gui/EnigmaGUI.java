@@ -20,7 +20,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JScrollPane;
 import java.awt.GridLayout;
-import java.awt.Button;
 
 public class EnigmaGUI {
 
@@ -113,8 +112,8 @@ public class EnigmaGUI {
 			}
 		});
 		
-		Button button = new Button("Cifra/Decifra");
-		button.addActionListener(new ActionListener() {
+		JButton buttonCifDecif = new JButton("Cifrare/Decifrare");
+		buttonCifDecif.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String r1 = choice.getSelectedItem();
@@ -127,13 +126,13 @@ public class EnigmaGUI {
 				txtrInserireMessaggioDa.setText(enigma.code(msg));
 			}
 		});
-		button.setActionCommand("");
-		GridBagConstraints gbc_button = new GridBagConstraints();
-		gbc_button.fill = GridBagConstraints.HORIZONTAL;
-		gbc_button.insets = new Insets(0, 0, 5, 0);
-		gbc_button.gridx = 0;
-		gbc_button.gridy = 2;
-		contentPane.add(button, gbc_button);
+		buttonCifDecif.setActionCommand("");
+		GridBagConstraints gbc_buttonCifDecif = new GridBagConstraints();
+		gbc_buttonCifDecif.fill = GridBagConstraints.HORIZONTAL;
+		gbc_buttonCifDecif.insets = new Insets(0, 0, 5, 0);
+		gbc_buttonCifDecif.gridx = 0;
+		gbc_buttonCifDecif.gridy = 2;
+		contentPane.add(buttonCifDecif, gbc_buttonCifDecif);
 		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
 		gbc_btnNewButton_2.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnNewButton_2.gridx = 0;

@@ -6,70 +6,101 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.other.Farfallino;
-
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
+
 import javax.swing.JButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+
+import javax.swing.JSplitPane;
+
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import javax.swing.JScrollPane;
 
 public class FarfaGUI {
 
 	private JPanel contentPane;
-
 	/**
 	 * Create the frame.
 	 */
 	public FarfaGUI() {
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(10, 10, 10, 10));
-		contentPane.setLayout(null);
+		contentPane.setBounds(0, 0, 400, 300);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{388, 0};
+		gbl_contentPane.rowHeights = new int[]{211, 0, 0, 0};
+		gbl_contentPane.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{1.0, 0.0, 0.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
-		JTextArea txtpnInserireMessaggioDa = new JTextArea();
-		txtpnInserireMessaggioDa.setBounds(10, 10, 409, 178);
-		contentPane.add(txtpnInserireMessaggioDa);
-		txtpnInserireMessaggioDa.addMouseListener(new MouseAdapter() {
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 0);
+		gbc_scrollPane.gridx = 0;
+		gbc_scrollPane.gridy = 0;
+		contentPane.add(scrollPane, gbc_scrollPane);
+		
+		JTextArea txtrInserireMessaggioDa = new JTextArea();
+		txtrInserireMessaggioDa.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent arg0) {
-				txtpnInserireMessaggioDa.setText("");
+			public void mousePressed(MouseEvent e) {
+				txtrInserireMessaggioDa.setText("");
 			}
 		});
-		txtpnInserireMessaggioDa.setLineWrap(true);
-		txtpnInserireMessaggioDa.setText("Inserire messaggio da cifrare/decifrare");
+		scrollPane.setViewportView(txtrInserireMessaggioDa);
+		txtrInserireMessaggioDa.setLineWrap(true);
+		txtrInserireMessaggioDa.setText("Inserire messaggio da cifrare/decifrare");
+		txtrInserireMessaggioDa.setRows(1);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setResizeWeight(0.5);
+		GridBagConstraints gbc_splitPane = new GridBagConstraints();
+		gbc_splitPane.fill = GridBagConstraints.HORIZONTAL;
+		gbc_splitPane.insets = new Insets(0, 0, 5, 0);
+		gbc_splitPane.gridx = 0;
+		gbc_splitPane.gridy = 1;
+		contentPane.add(splitPane, gbc_splitPane);
 		
 		JButton btnNewButton = new JButton("Cifra");
-		btnNewButton.setBounds(10, 193, 197, 23);
-		contentPane.add(btnNewButton);
+		splitPane.setLeftComponent(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
-				Farfallino f = new Farfallino(msg);
-				txtpnInserireMessaggioDa.setText(f.coding());
+				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
+				Farfallino farfa = new Farfallino(msg);
+				txtrInserireMessaggioDa.setText(farfa.coding());
 			}
 		});
 		
 		JButton btnNewButton_1 = new JButton("Decifra");
-		btnNewButton_1.setBounds(212, 193, 207, 23);
-		contentPane.add(btnNewButton_1);
+		splitPane.setRightComponent(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String msg = txtpnInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
-				Farfallino f = new Farfallino(msg);
-				txtpnInserireMessaggioDa.setText(f.decoding());
+			public void actionPerformed(ActionEvent e) {
+				String msg = txtrInserireMessaggioDa.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
+				Farfallino farfa = new Farfallino(msg);
+				txtrInserireMessaggioDa.setText(farfa.decoding());
 			}
 		});
 		
 		JButton btnNewButton_2 = new JButton("Torna al menu");
-		btnNewButton_2.setBounds(10, 221, 409, 23);
-		contentPane.add(btnNewButton_2);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MenuGUI.reload();
 			}
 		});
+		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
+		gbc_btnNewButton_2.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnNewButton_2.gridx = 0;
+		gbc_btnNewButton_2.gridy = 2;
+		contentPane.add(btnNewButton_2, gbc_btnNewButton_2);
 	}
 	
 	public JPanel getPanel(){

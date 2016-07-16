@@ -30,8 +30,7 @@ public class MenuGUI {
 	private static JButton btnOnetimePad;
 	private static JLabel lblSelezionareIlCifrario;
 	private static JPanel menu;
-	private static JPanel contentPane;
-
+	private static JButton btnInfo;
 	/**
 	 * Launch the application.
 	 */
@@ -40,8 +39,8 @@ public class MenuGUI {
 			public void run() {
 				try {
 					frmCifrari = new JFrame();
-					frmCifrari.setTitle("Cifrari");
-					frmCifrari.setBounds(100, 100, 450, 300);
+					frmCifrari.setTitle("Cifrari by Marco Buracchi");
+					frmCifrari.setBounds(100, 100, 700, 550);
 					frmCifrari.setLocationRelativeTo(null);
 					frmCifrari.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					
@@ -54,9 +53,8 @@ public class MenuGUI {
 						@Override
 						public void mousePressed(MouseEvent arg0) {
 							FarfaGUI farfa = new FarfaGUI();
-							contentPane = farfa.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(farfa.getPanel());
 						}
 					});
 					lblSelezionareIlCifrario.setHorizontalAlignment(SwingConstants.CENTER);
@@ -66,9 +64,8 @@ public class MenuGUI {
 					btnShiftCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							ShiftGUI shift = new ShiftGUI();
-							contentPane = shift.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);				
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(shift.getPanel());			
 						}
 					});
 					
@@ -77,9 +74,8 @@ public class MenuGUI {
 					btnSubstitutionCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							SubstitutionGUI sub = new SubstitutionGUI();
-							contentPane = sub.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(sub.getPanel());
 						}
 					});
 					
@@ -88,9 +84,8 @@ public class MenuGUI {
 					btnAffineCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							AffineGUI aff = new AffineGUI();
-							contentPane = aff.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(aff.getPanel());
 						}
 					});
 					
@@ -99,9 +94,8 @@ public class MenuGUI {
 					btnVigenere.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							VigenereGUI vig = new VigenereGUI();
-							contentPane = vig.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(vig.getPanel());
 						}
 					});
 					
@@ -110,9 +104,8 @@ public class MenuGUI {
 					btnHill.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							HillGUI hill = new HillGUI();
-							contentPane = hill.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(hill.getPanel());
 						}
 					});
 					
@@ -121,9 +114,8 @@ public class MenuGUI {
 					btnPermutationCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							PermutationGUI perm = new PermutationGUI();
-							contentPane = perm.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(perm.getPanel());
 						}
 					});
 					
@@ -132,9 +124,8 @@ public class MenuGUI {
 					btnOnetimePad.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							OneTimePadGUI otp = new OneTimePadGUI();
-							contentPane = otp.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(otp.getPanel());
 						}
 					});
 					
@@ -143,13 +134,22 @@ public class MenuGUI {
 					btnEnigma.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
 							EnigmaGUI enigma = new EnigmaGUI();
-							contentPane = enigma.getPanel();
-							frmCifrari.setContentPane(contentPane);
-							contentPane.setVisible(true);
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(enigma.getPanel());
 						}
 					});
 					
 					frmCifrari.setContentPane(menu);
+					
+					btnInfo = new JButton("Info");
+					btnInfo.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent arg0) {
+							InfoGUI info = new InfoGUI();
+							frmCifrari.getContentPane().setVisible(false);
+							frmCifrari.setContentPane(info.getPanel());
+						}
+					});
+					menu.add(btnInfo);
 					frmCifrari.setVisible(true);
 				}
 				 catch (Exception e) {
@@ -160,9 +160,9 @@ public class MenuGUI {
 	}
 	
 	public static void reload(){
+		frmCifrari.getContentPane().setVisible(false);
 		frmCifrari.setContentPane(menu);
 		menu.setVisible(true);
-		contentPane.setVisible(false);
 	}
 }
 

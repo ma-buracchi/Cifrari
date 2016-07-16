@@ -6,93 +6,127 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.substitution.Substitution;
-
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.SwingConstants;
-import javax.swing.JButton;
 import javax.swing.JTextArea;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 import javax.swing.JTextField;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.JSplitPane;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JScrollPane;
+import java.awt.GridLayout;
 
 public class SubstitutionGUI {
 
 	private JPanel contentPane;
 	private JTextField txtInserireLaPermutazione;
 
-	/**
+		/**
 	 * Create the frame.
 	 */
 	public SubstitutionGUI() {
 		contentPane = new JPanel();
+		contentPane.setBounds(0, 0, 400, 300);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(null);
+		GridBagLayout gbl_contentPane = new GridBagLayout();
+		gbl_contentPane.columnWidths = new int[]{388, 0};
+		gbl_contentPane.rowHeights = new int[] {211, 30, 0, 0, 0};
+		gbl_contentPane.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_contentPane.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		contentPane.setLayout(gbl_contentPane);
 		
-		JTextArea txtpnInserireIlMessaggio = new JTextArea();
-		txtpnInserireIlMessaggio.addMouseListener(new MouseAdapter() {
+		JScrollPane scrollPane = new JScrollPane();
+		GridBagConstraints gbc_scrollPane = new GridBagConstraints();
+		gbc_scrollPane.fill = GridBagConstraints.BOTH;
+		gbc_scrollPane.insets = new Insets(0, 0, 5, 0);
+		gbc_scrollPane.gridx = 0;
+		gbc_scrollPane.gridy = 0;
+		contentPane.add(scrollPane, gbc_scrollPane);
+		
+		JTextArea txtrInserireMessaggio = new JTextArea();
+		txtrInserireMessaggio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
-				txtpnInserireIlMessaggio.setText("");
+				txtrInserireMessaggio.setText("");
 			}
 		});
-		txtpnInserireIlMessaggio.setText("Inserire il messaggio da cifrare/decifrare");
-		txtpnInserireIlMessaggio.setBounds(10, 11, 414, 149);
-		txtpnInserireIlMessaggio.setLineWrap(true);
-		contentPane.add(txtpnInserireIlMessaggio);
+		scrollPane.setViewportView(txtrInserireMessaggio);
+		txtrInserireMessaggio.setLineWrap(true);
+		txtrInserireMessaggio.setText("Inserire messaggio da cifrare/decifrare");
+		txtrInserireMessaggio.setRows(1);
+		
+		JPanel panel = new JPanel();
+		GridBagConstraints gbc_panel = new GridBagConstraints();
+		gbc_panel.fill = GridBagConstraints.HORIZONTAL;
+		gbc_panel.insets = new Insets(0, 0, 5, 0);
+		gbc_panel.gridx = 0;
+		gbc_panel.gridy = 1;
+		contentPane.add(panel, gbc_panel);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		txtInserireLaPermutazione = new JTextField();
+		panel.add(txtInserireLaPermutazione);
 		txtInserireLaPermutazione.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				txtInserireLaPermutazione.setText("");
 			}
 		});
-		txtInserireLaPermutazione.setBounds(10, 170, 414, 20);
 		txtInserireLaPermutazione.setHorizontalAlignment(SwingConstants.CENTER);
 		txtInserireLaPermutazione.setText("Inserire la permutazione dell'alfabeto che si vuole utilizzare");
-		contentPane.add(txtInserireLaPermutazione);
-		txtInserireLaPermutazione.setColumns(10);
+		
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setResizeWeight(0.5);
+		GridBagConstraints gbc_splitPane = new GridBagConstraints();
+		gbc_splitPane.fill = GridBagConstraints.HORIZONTAL;
+		gbc_splitPane.insets = new Insets(0, 0, 5, 0);
+		gbc_splitPane.gridx = 0;
+		gbc_splitPane.gridy = 2;
+		contentPane.add(splitPane, gbc_splitPane);
 		
 		JButton btnCifrare = new JButton("Cifrare");
-		btnCifrare.setBounds(10, 200, 202, 20);
+		splitPane.setLeftComponent(btnCifrare);
 		btnCifrare.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireIlMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
+				String msg = txtrInserireMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
 				String perm = txtInserireLaPermutazione.getText();
 				Substitution nw = new Substitution(perm,msg);
-				txtpnInserireIlMessaggio.setText(nw.coding());
+				txtrInserireMessaggio.setText(nw.coding());
 			}
 		});
-		contentPane.add(btnCifrare);
 		
-		JButton btnTornaAlMenu = new JButton("Torna al menu");
-		btnTornaAlMenu.addActionListener(new ActionListener() {
+		JButton btnDecifrare = new JButton("Decifrare");
+		splitPane.setRightComponent(btnDecifrare);
+		btnDecifrare.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String msg = txtrInserireMessaggio.getText().replaceAll("[^A-Za-z]", "").toLowerCase();
+				String perm = txtInserireLaPermutazione.getText();
+				Substitution nw = new Substitution(perm,msg);
+				txtrInserireMessaggio.setText(nw.decoding());
+			}
+		});
+		
+		JButton btnMenu = new JButton("Torna al menu");
+		btnMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MenuGUI.reload();
 			}
 		});
-		btnTornaAlMenu.setBounds(10, 230, 414, 20);
-		contentPane.add(btnTornaAlMenu);
-		
-		JButton btnDecifrare = new JButton("Decifrare");
-		btnDecifrare.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String msg = txtpnInserireIlMessaggio.getText();
-				String perm = txtInserireLaPermutazione.getText();
-				Substitution nw = new Substitution(perm,msg);
-				txtpnInserireIlMessaggio.setText(nw.decoding());
-			}
-		});
-		btnDecifrare.setBounds(222, 200, 202, 20);
-		contentPane.add(btnDecifrare);
-
+		GridBagConstraints gbc_btnMenu = new GridBagConstraints();
+		gbc_btnMenu.fill = GridBagConstraints.HORIZONTAL;
+		gbc_btnMenu.gridx = 0;
+		gbc_btnMenu.gridy = 3;
+		contentPane.add(btnMenu, gbc_btnMenu);
 	}
 	
 	public JPanel getPanel(){
 		return contentPane;
 	}
-
 }

@@ -28,7 +28,7 @@ public class Shift {
 	public String decoding(){
 		String res = "";
 		for (int i = 0; i < s.length(); i++){
-			res = res + (char)(((Util.convertLetter(s.charAt(i)) - n) % 26)+97);
+			res = res + (char)((((Util.convertLetter(s.charAt(i))) - n + 26) % 26)+97);
 		}
 		return res;
 	}

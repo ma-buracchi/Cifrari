@@ -33,6 +33,7 @@ public class MenuGUI {
 	private static JButton btnInfo;
 	/**
 	 * Launch the application.
+	 * @param args rappresenta gli input
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

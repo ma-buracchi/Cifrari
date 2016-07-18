@@ -52,7 +52,7 @@ public class HillGUI {
 		
 		JTextArea txtrInserireMessaggio = new JTextArea();
 		txtrInserireMessaggio.addMouseListener(new MouseAdapter() {
-			@Override
+//			@Override
 			public void mousePressed(MouseEvent e) {
 				txtrInserireMessaggio.setText("");
 			}

@@ -51,7 +51,7 @@ public class FarfaGUI {
 		
 		JTextArea txtrInserireMessaggioDa = new JTextArea();
 		txtrInserireMessaggioDa.addMouseListener(new MouseAdapter() {
-			@Override
+//			@Override
 			public void mousePressed(MouseEvent e) {
 				txtrInserireMessaggioDa.setText("");
 			}

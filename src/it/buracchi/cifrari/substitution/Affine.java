@@ -17,7 +17,7 @@ public class Affine {
 	public Affine(String s, int a, int b){
 		msg = s;
 		this.a = a;
-		this.b = b;
+		this.b = b%26;
 	}
 	
 	public String coding(){

@@ -16,10 +16,10 @@ public class Util {
 		return (int) a - 97;
 	}
 
-	public static void printArray(char[] y) {
+	public static void printArray(String[] temp) {
 		System.out.println();
 		for (int i = 0; i < 26; i++) {
-			System.out.print(y[i] + " | ");
+			System.out.print(temp[i] + " | ");
 		}
 		System.out.println();
 	}

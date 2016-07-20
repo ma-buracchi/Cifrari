@@ -5,9 +5,6 @@
 
 package it.buracchi.cifrari.enigma;
 
-import it.buracchi.cifrari.other.*;
-
-
 public class Enigma {
 
 	private Plugboard plugboard;
@@ -18,13 +15,14 @@ public class Enigma {
 	private int j = 0;
 	private int k = 0;
 
-	public Enigma(String f, int fast, String m, int med, String s, int slow, String p) {
+	public Enigma(String f, int fast, String m, int med, String s, int slow,
+			String plug, String ref) {
 		// Inizializzazione di Enigma dai file prescelti
-		plugboard = new Plugboard(p);
-		reflector = new Reflector(Util.readLineToArray("Reflector/Reflector01"));
-		rotFast = new Rotore(Util.readLineToArray("Rotori/" + f));
-		rotMed = new Rotore(Util.readLineToArray("Rotori/" + m));
-		rotSlow = new Rotore(Util.readLineToArray("Rotori/" + s));
+		plugboard = new Plugboard(plug);
+		reflector = new Reflector(ref);
+		rotFast = new Rotore(f);
+		rotMed = new Rotore(m);
+		rotSlow = new Rotore(s);
 		setEnigma(fast, med, slow);
 	}
 
@@ -56,7 +54,7 @@ public class Enigma {
 			temp = plugboard.code(temp); // nella plugboard
 			res = res + temp;
 		}
-		return(res);
+		return (res);
 	}
 
 	private void rotate() {

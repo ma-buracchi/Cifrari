@@ -15,10 +15,19 @@ public class Hill {
 
 	public Hill(int m, String k, String msg) {
 		this.m = m;
-		key = Util.readMatrix(m, "Key/" + k);
-		while(msg.length() % m != 0){
+		key = new int[m][m];
+		String[] temp = k.split(" ");
+		int x = 0;
+		for (int j = 0; j < m; j++) {
+			for (int l = 0; l < m; l++) {
+				key[j][l] = Integer.parseInt(temp[x]);
+				x++;
+			}
+		}
+		while (msg.length() % m != 0) {
 			msg += "a";
 		}
+
 		message = new int[msg.length()];
 		for (int i = 0; i < msg.length(); i++) {
 			message[i] = Util.convertLetter(msg.charAt(i));

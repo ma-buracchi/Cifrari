@@ -6,12 +6,10 @@
 package it.buracchi.cifrari.gui;
 
 import it.buracchi.cifrari.enigma.Enigma;
-
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
-
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -19,21 +17,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JScrollPane;
-
 import java.awt.GridLayout;
-
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
 import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.JLabel;
 import javax.swing.JSplitPane;
+import javax.swing.JRadioButton;
 
 public class EnigmaGUI {
 
@@ -54,6 +49,9 @@ public class EnigmaGUI {
 	private final JSplitPane splitPane = new JSplitPane();
 	private final JButton btnIndietro = new JButton("Indietro");
 	private final JLabel lblNonSiPu = new JLabel("Non si pu\u00F2 inserire due volte lo stesso rotore");
+	private final JRadioButton rdbtnReflectorB = new JRadioButton("Reflector B");
+	private final JSplitPane splitPane_1 = new JSplitPane();
+	private final JRadioButton rdbtnReflectorC = new JRadioButton("Reflector C");
 
 	/**
 	 * Create the frame.
@@ -64,9 +62,9 @@ public class EnigmaGUI {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		GridBagLayout gbl_contentPane = new GridBagLayout();
 		gbl_contentPane.columnWidths = new int[] { 388, 0 };
-		gbl_contentPane.rowHeights = new int[] { 168, 0, 0, 0, 30, 0, 0 };
+		gbl_contentPane.rowHeights = new int[] { 168, 0, 0, 0, 0, 30, 0, 0 };
 		gbl_contentPane.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
-		gbl_contentPane.rowWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+		gbl_contentPane.rowWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 				Double.MIN_VALUE };
 		contentPane.setLayout(gbl_contentPane);
 
@@ -110,11 +108,42 @@ public class EnigmaGUI {
 		contentPane.add(txtPlugboard, gbc_txtPlugboard);
 		txtPlugboard.setColumns(10);
 		
+		GridBagConstraints gbc_splitPane_1 = new GridBagConstraints();
+		gbc_splitPane_1.fill = GridBagConstraints.BOTH;
+		gbc_splitPane_1.insets = new Insets(0, 0, 5, 0);
+		gbc_splitPane_1.gridx = 0;
+		gbc_splitPane_1.gridy = 2;
+		splitPane_1.setResizeWeight(0.5);
+		contentPane.add(splitPane_1, gbc_splitPane_1);
+		rdbtnReflectorB.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				if (rdbtnReflectorC.isSelected()){
+					rdbtnReflectorC.setSelected(false);
+				}
+			}
+		});
+		rdbtnReflectorB.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		splitPane_1.setLeftComponent(rdbtnReflectorB);
+		rdbtnReflectorC.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				if (rdbtnReflectorB.isSelected()){
+					rdbtnReflectorB.setSelected(false);
+				}
+			}
+		});
+		
+		rdbtnReflectorC.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		splitPane_1.setRightComponent(rdbtnReflectorC);
+		
 		GridBagConstraints gbc_panel = new GridBagConstraints();
 		gbc_panel.insets = new Insets(0, 0, 5, 0);
 		gbc_panel.fill = GridBagConstraints.BOTH;
 		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 2;
+		gbc_panel.gridy = 3;
 		contentPane.add(panel, gbc_panel);
 		panel.setLayout(new GridLayout(2, 3, 0, 0));
 		
@@ -197,7 +226,11 @@ public class EnigmaGUI {
 				int p1 = Integer.parseInt((String) choice_3.getSelectedItem());
 				int p2 = Integer.parseInt((String) choice_4.getSelectedItem());
 				int p3 = Integer.parseInt((String) choice_5.getSelectedItem());
-				Enigma enigma = new Enigma(r1, p1, r2, p2, r3, p3, plug);
+				String ref = "B";
+				if(rdbtnReflectorC.isSelected()){
+					ref = "C";
+				}
+				Enigma enigma = new Enigma(r1, p1, r2, p2, r3, p3, plug, ref);
 				txtrInserireMessaggioDa.setText(enigma.code(msg));
 			}
 		});
@@ -206,7 +239,7 @@ public class EnigmaGUI {
 		gbc_splitPane.insets = new Insets(0, 0, 5, 0);
 		gbc_splitPane.fill = GridBagConstraints.BOTH;
 		gbc_splitPane.gridx = 0;
-		gbc_splitPane.gridy = 3;
+		gbc_splitPane.gridy = 4;
 		splitPane.setResizeWeight(0.8);
 		contentPane.add(splitPane, gbc_splitPane);
 		btnIndietro.addActionListener(new ActionListener() {
@@ -230,12 +263,12 @@ public class EnigmaGUI {
 		gbc_buttonCifDecif.fill = GridBagConstraints.HORIZONTAL;
 		gbc_buttonCifDecif.insets = new Insets(0, 0, 5, 0);
 		gbc_buttonCifDecif.gridx = 0;
-		gbc_buttonCifDecif.gridy = 4;
+		gbc_buttonCifDecif.gridy = 5;
 		contentPane.add(buttonCifDecif, gbc_buttonCifDecif);
 		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
 		gbc_btnNewButton_2.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnNewButton_2.gridx = 0;
-		gbc_btnNewButton_2.gridy = 5;
+		gbc_btnNewButton_2.gridy = 6;
 		contentPane.add(btnNewButton_2, gbc_btnNewButton_2);
 	}
 

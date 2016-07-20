@@ -14,7 +14,7 @@ Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 - Ogni lettera del messaggio da cifrare/decifrare verrà cifrata utilizzando la chiave inserita, secondo il cifrario di Vigenere
 
 5) Hill:
-- Il messaggio da cifrare/decifrare verrà cifrato secondo il cifrario di Hill utilizzando le matrici selezionate dall'utente. Possono essere create ed utilizzate nuove matrici (solo di interi) che possono essere salvate nella cartella Key.
+- Il messaggio da cifrare/decifrare verrà cifrato secondo il cifrario di Hill utilizzando le matrici inserite dall'utente. La matrice deve essere composta da numeri interi e deve essere inserita elemento per elemento, separati da spazi, riga per riga. Ad esempio per inserire una matrice 2x2 con elementi rispettivamente 1 e 2 nella prima riga, 3 e 4 nella seconda deve essere inserita la stringa "1 2 3 4".
 
 6) Permutation cipher:
 - Ogni blocco del messaggio di grandezza m (max 10, selezionata dall'utente) verrà cifrato utilizzando la permutazione di interi (da 0 a m-1) inserita.
@@ -24,6 +24,7 @@ Implementazioni di alcuni dei più famosi cifrari a chiave condivisa
 - In caso di decifratura, il messaggio verrà decifrato secondo il cifrario One-Time Pad, utilizzando la chiave inserita
 
 8) ENIGMA:
-- Il messaggio da cifrare/decifrare verrà cifrato/decifrato secondo il cifrario ENIGMA utilizzando la configurazione dei rotori selezionata dall'utente.
+- Il messaggio da cifrare/decifrare verrà cifrato/decifrato secondo il cifrario ENIGMA utilizzando la configurazione dei rotori e della plugboard selezionata dall'utente. Per configurare la plugboard occorre inserire l'alfabeto con gli scambi desiderati; ad esempio se si vuole scambiare la b con la s e la g con la v l'alfabeto da inserire sarà: 
+ascdefvhijklmnopqrbtugwxyz
 
 9) ?????????

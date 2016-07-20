@@ -20,21 +20,13 @@ import javax.swing.JPanel;
 public class MenuGUI {
 
 	private static JFrame frmCifrari;
-	private static JButton btnHill;
-	private static JButton btnVigenere;
-	private static JButton btnEnigma;
-	private static JButton btnShiftCipher;
-	private static JButton btnSubstitutionCipher;
-	private static JButton btnAffineCipher;
-	private static JButton btnPermutationCipher;
-	private static JButton btnOnetimePad;
-	private static JLabel lblSelezionareIlCifrario;
 	private static JPanel menu;
-	private static JButton btnInfo;
+	
 	/**
 	 * Launch the application.
 	 * @param args rappresenta gli input
 	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -48,7 +40,7 @@ public class MenuGUI {
 					menu = new JPanel();
 					menu.setLayout(new GridLayout(0, 1, 0, 0));
 					
-					lblSelezionareIlCifrario = new JLabel("Selezionare il cifrario che si vuole utilizzare");
+					JLabel lblSelezionareIlCifrario = new JLabel("Selezionare il cifrario che si vuole utilizzare");
 					menu.add(lblSelezionareIlCifrario);
 					lblSelezionareIlCifrario.addMouseListener(new MouseAdapter() {
 						@Override
@@ -60,7 +52,7 @@ public class MenuGUI {
 					});
 					lblSelezionareIlCifrario.setHorizontalAlignment(SwingConstants.CENTER);
 					
-					btnShiftCipher = new JButton("Shift cipher");
+					JButton btnShiftCipher = new JButton("Shift cipher");
 					menu.add(btnShiftCipher);
 					btnShiftCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
@@ -70,7 +62,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnSubstitutionCipher = new JButton("Substitution cipher");
+					JButton btnSubstitutionCipher = new JButton("Substitution cipher");
 					menu.add(btnSubstitutionCipher);
 					btnSubstitutionCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -80,7 +72,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnAffineCipher = new JButton("Affine cipher");
+					JButton btnAffineCipher = new JButton("Affine cipher");
 					menu.add(btnAffineCipher);
 					btnAffineCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -90,7 +82,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnVigenere = new JButton("Vigenere cipher");
+					JButton btnVigenere = new JButton("Vigenere cipher");
 					menu.add(btnVigenere);
 					btnVigenere.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -100,7 +92,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnHill = new JButton("Hill cipher");
+					JButton btnHill = new JButton("Hill cipher");
 					menu.add(btnHill);
 					btnHill.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
@@ -110,7 +102,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnPermutationCipher = new JButton("Permutation cipher");
+					JButton btnPermutationCipher = new JButton("Permutation cipher");
 					menu.add(btnPermutationCipher);
 					btnPermutationCipher.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -120,7 +112,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnOnetimePad = new JButton("One-Time Pad cipher");
+					JButton btnOnetimePad = new JButton("One-Time Pad cipher");
 					menu.add(btnOnetimePad);
 					btnOnetimePad.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -130,7 +122,7 @@ public class MenuGUI {
 						}
 					});
 					
-					btnEnigma = new JButton("Enigma cipher");
+					JButton btnEnigma = new JButton("Enigma cipher");
 					menu.add(btnEnigma);
 					btnEnigma.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent e) {
@@ -142,7 +134,7 @@ public class MenuGUI {
 					
 					frmCifrari.setContentPane(menu);
 					
-					btnInfo = new JButton("Info");
+					JButton btnInfo = new JButton("Info");
 					btnInfo.addActionListener(new ActionListener() {
 						public void actionPerformed(ActionEvent arg0) {
 							InfoGUI info = new InfoGUI();

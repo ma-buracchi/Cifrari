@@ -5,10 +5,34 @@
 
 package it.buracchi.cifrari.enigma;
 
-public class Reflector extends Connector {
+import it.buracchi.cifrari.other.Util;
+
+public class Reflector {
+
+private char[] to = new char[26];
+	
+	/**
+	 * 
+	 * @param t è l'array di caratteri che rappresenta l'inizializzazione della plugboard
+	 */
 
 	public Reflector(char[] t) {
-		super(t);
+		for (int i = 0; i < 26; i++) {
+			to[i] = t[i];
+		}
+	}
+	
+	/**
+	 * 
+	 * @param a è l'attuale carattere da codificare
+	 * @return il carattere codificato
+	 */
+
+	public char code(char a) {
+		//Util.printArray(from);
+		char c = to[Util.convertLetter(a)];
+		//Util.printArray(to);
+		return c;
 	}
 
 }

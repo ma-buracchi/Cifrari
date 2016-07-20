@@ -18,9 +18,9 @@ public class Enigma {
 	private int j = 0;
 	private int k = 0;
 
-	public Enigma(String f, int fast, String m, int med, String s, int slow) {
+	public Enigma(String f, int fast, String m, int med, String s, int slow, String p) {
 		// Inizializzazione di Enigma dai file prescelti
-		plugboard = new Plugboard(Util.readLineToArray("Plugboard/Plugboard01"));
+		plugboard = new Plugboard(p);
 		reflector = new Reflector(Util.readLineToArray("Reflector/Reflector01"));
 		rotFast = new Rotore(Util.readLineToArray("Rotori/" + f));
 		rotMed = new Rotore(Util.readLineToArray("Rotori/" + m));

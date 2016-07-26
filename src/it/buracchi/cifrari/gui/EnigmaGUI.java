@@ -113,6 +113,7 @@ public class EnigmaGUI {
 		gbc_splitPane_1.insets = new Insets(0, 0, 5, 0);
 		gbc_splitPane_1.gridx = 0;
 		gbc_splitPane_1.gridy = 2;
+		splitPane_1.setEnabled(false);
 		splitPane_1.setResizeWeight(0.5);
 		contentPane.add(splitPane_1, gbc_splitPane_1);
 		rdbtnReflectorB.addMouseListener(new MouseAdapter() {
@@ -240,6 +241,7 @@ public class EnigmaGUI {
 		gbc_splitPane.fill = GridBagConstraints.BOTH;
 		gbc_splitPane.gridx = 0;
 		gbc_splitPane.gridy = 4;
+		splitPane.setEnabled(false);
 		splitPane.setResizeWeight(0.8);
 		contentPane.add(splitPane, gbc_splitPane);
 		btnIndietro.addActionListener(new ActionListener() {

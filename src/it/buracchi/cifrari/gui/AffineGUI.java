@@ -64,6 +64,7 @@ public class AffineGUI {
 		txtrInserireMessaggioDa.setRows(1);
 		
 		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setEnabled(false);
 		splitPane_1.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane_1 = new GridBagConstraints();
 		gbc_splitPane_1.insets = new Insets(0, 0, 5, 0);
@@ -73,6 +74,7 @@ public class AffineGUI {
 		contentPane.add(splitPane_1, gbc_splitPane_1);
 		
 		txtCoefficienteB = new JTextField();
+		txtCoefficienteB.setColumns(10);
 		txtCoefficienteB.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
@@ -82,7 +84,6 @@ public class AffineGUI {
 		txtCoefficienteB.setText("Coefficiente b");
 		txtCoefficienteB.setHorizontalAlignment(SwingConstants.CENTER);
 		splitPane_1.setRightComponent(txtCoefficienteB);
-		txtCoefficienteB.setColumns(10);
 		
 		Choice choice = new Choice();
 		splitPane_1.setLeftComponent(choice);
@@ -91,6 +92,7 @@ public class AffineGUI {
 		}
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setEnabled(false);
 		splitPane.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane = new GridBagConstraints();
 		gbc_splitPane.fill = GridBagConstraints.HORIZONTAL;

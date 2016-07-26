@@ -83,6 +83,7 @@ public class SubstitutionGUI {
 		txtInserireLaPermutazione.setText("Inserire la permutazione dell'alfabeto che si vuole utilizzare");
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setEnabled(false);
 		splitPane.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane = new GridBagConstraints();
 		gbc_splitPane.fill = GridBagConstraints.HORIZONTAL;

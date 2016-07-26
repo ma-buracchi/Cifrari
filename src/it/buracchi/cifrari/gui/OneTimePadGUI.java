@@ -39,8 +39,9 @@ public class OneTimePadGUI {
 		contentPane.setLayout(gbl_contentPane);
 		
 		JSplitPane splitPane = new JSplitPane();
-		splitPane.setResizeWeight(0.5);
+		splitPane.setEnabled(false);
 		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		splitPane.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane = new GridBagConstraints();
 		gbc_splitPane.fill = GridBagConstraints.BOTH;
 		gbc_splitPane.insets = new Insets(0, 0, 5, 0);
@@ -85,6 +86,7 @@ public class OneTimePadGUI {
 		});
 		
 		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setEnabled(false);
 		splitPane_1.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane_1 = new GridBagConstraints();
 		gbc_splitPane_1.insets = new Insets(0, 0, 5, 0);

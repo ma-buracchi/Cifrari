@@ -63,6 +63,7 @@ public class PermutationGUI {
 		txtrInserireMessaggio.setRows(1);
 		
 		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setEnabled(false);
 		splitPane_1.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane_1 = new GridBagConstraints();
 		gbc_splitPane_1.insets = new Insets(0, 0, 5, 0);
@@ -81,7 +82,6 @@ public class PermutationGUI {
 		txtPermutazione.setText("Permutazione di interi (0..m-1)");
 		txtPermutazione.setHorizontalAlignment(SwingConstants.CENTER);
 		splitPane_1.setRightComponent(txtPermutazione);
-		txtPermutazione.setColumns(10);
 		
 		txtLunghezzaDeiBlocchi = new JTextField();
 		txtLunghezzaDeiBlocchi.addMouseListener(new MouseAdapter() {
@@ -93,12 +93,12 @@ public class PermutationGUI {
 		txtLunghezzaDeiBlocchi.setHorizontalAlignment(SwingConstants.CENTER);
 		txtLunghezzaDeiBlocchi.setText("Lunghezza dei blocchi m (max 10)");
 		splitPane_1.setLeftComponent(txtLunghezzaDeiBlocchi);
-		txtLunghezzaDeiBlocchi.setColumns(10);
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setEnabled(false);
 		splitPane.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane = new GridBagConstraints();
-		gbc_splitPane.fill = GridBagConstraints.HORIZONTAL;
+		gbc_splitPane.fill = GridBagConstraints.BOTH;
 		gbc_splitPane.insets = new Insets(0, 0, 5, 0);
 		gbc_splitPane.gridx = 0;
 		gbc_splitPane.gridy = 2;

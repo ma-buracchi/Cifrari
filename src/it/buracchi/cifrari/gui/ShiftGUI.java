@@ -77,6 +77,7 @@ public class ShiftGUI {
 		}
 		
 		JSplitPane splitPane = new JSplitPane();
+		splitPane.setEnabled(false);
 		splitPane.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane = new GridBagConstraints();
 		gbc_splitPane.fill = GridBagConstraints.HORIZONTAL;

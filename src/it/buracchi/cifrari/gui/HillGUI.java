@@ -63,6 +63,7 @@ public class HillGUI {
 		txtrInserireMessaggio.setRows(1);
 		
 		JSplitPane splitPane_1 = new JSplitPane();
+		splitPane_1.setEnabled(false);
 		splitPane_1.setResizeWeight(0.5);
 		GridBagConstraints gbc_splitPane_1 = new GridBagConstraints();
 		gbc_splitPane_1.insets = new Insets(0, 0, 5, 0);

@@ -115,15 +115,4 @@ public class Util {
 		}
 		return res;
 	}
-	
-	public static String searchMatrix(char[][] m, char l){
-		for(int i = 1; i < m.length; i++){
-			for(int j = 1; j < m[0].length; j++){
-				if (m[i][j] == l){
-					return "" + m[i][0] + m[0][j];
-				}
-			}
-		}
-		return "ERROR";
-	}
 }

@@ -8,9 +8,13 @@ package it.buracchi.cifrari.gui;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
 
 public class MenuGUI {
@@ -34,17 +38,19 @@ public class MenuGUI {
 					frmCifrari.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					
 					menu = new JPanel();
-					menu.setLayout(new GridLayout(0, 2, 0, 0));
+					menu.setLayout(new GridLayout(0, 1, 0, 0));
 					
-					JButton btnPolibioCipher = new JButton("Polibio cipher");
-					menu.add(btnPolibioCipher);
-					btnPolibioCipher.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent arg0) {
-							PolibioGUI poli = new PolibioGUI();
+					JLabel lblSelezionareIlCifrario = new JLabel("Selezionare il cifrario che si vuole utilizzare");
+					menu.add(lblSelezionareIlCifrario);
+					lblSelezionareIlCifrario.addMouseListener(new MouseAdapter() {
+						@Override
+						public void mousePressed(MouseEvent arg0) {
+							FarfaGUI farfa = new FarfaGUI();
 							frmCifrari.getContentPane().setVisible(false);
-							frmCifrari.setContentPane(poli.getPanel());			
+							frmCifrari.setContentPane(farfa.getPanel());
 						}
 					});
+					lblSelezionareIlCifrario.setHorizontalAlignment(SwingConstants.CENTER);
 					
 					JButton btnShiftCipher = new JButton("Shift cipher");
 					menu.add(btnShiftCipher);

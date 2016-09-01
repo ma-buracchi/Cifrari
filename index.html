@@ -39,61 +39,67 @@
         </div>
 
         <h1>
-<a id="cifrari-27" class="anchor" href="#cifrari-27" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cifrari 2.7</h1>
+<a id="cifrari-28" class="anchor" href="#cifrari-28" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cifrari 2.8</h1>
 
 <p>Implementazioni di alcuni dei più famosi cifrari a chiave condivisa</p>
 
-<p>1) Shift cipher:</p>
+<p>1) Polibio cipher:</p>
+
+<ul>
+<li>Ogni lettera del messaggio da cifrare/decifrare verrà cifrata seguendo il cifrario di Polibio con sei lettere. La disposizione delle ventisei lettere dell'alfabeto e delle cifre da 0 a 9 nella tabella dovrà essere effettuata inserendo riga per riga i caratteri scelti.</li>
+</ul>
+
+<p>2) Shift cipher:</p>
 
 <ul>
 <li>Ogni lettera del messaggio da cifrare/decifrare verrà spostata in avanti/indietro del numero di posizioni desiderato (3 è il valore con il quale è impostato lo storico cifrario di Giulio Cesare)</li>
 </ul>
 
-<p>2) Substitution cipher:</p>
+<p>3) Substitution cipher:</p>
 
 <ul>
 <li>Ogni lettera del messaggio da cifrare/decifrare verrà sostituita con la corrispondente lettera nella permutazione indicata</li>
 </ul>
 
-<p>3) Affine cipher:</p>
+<p>4) Affine cipher:</p>
 
 <ul>
 <li>Ogni lettera (x) del messaggio da cifrare/decifrare verrà cifrata come c(x) = (ax + b) mod 26 utilizzando i coefficienti selezionati</li>
 </ul>
 
-<p>4) Vigenere:</p>
+<p>5) Vigenere:</p>
 
 <ul>
 <li>Ogni lettera del messaggio da cifrare/decifrare verrà cifrata utilizzando la chiave inserita, secondo il cifrario di Vigenere</li>
 </ul>
 
-<p>5) Hill:</p>
+<p>6) Hill:</p>
 
 <ul>
 <li>Il messaggio da cifrare/decifrare verrà cifrato secondo il cifrario di Hill utilizzando le matrici inserite dall'utente. La matrice deve essere composta da numeri interi e deve essere inserita elemento per elemento, separati da spazi, riga per riga. Ad esempio per inserire una matrice 2x2 con elementi rispettivamente 1 e 2 nella prima riga, 3 e 4 nella seconda deve essere inserita la stringa "1 2 3 4".</li>
 </ul>
 
-<p>6) Permutation cipher:</p>
+<p>7) Permutation cipher:</p>
 
 <ul>
 <li>Ogni blocco del messaggio di grandezza m (max 10, selezionata dall'utente) verrà cifrato utilizzando la permutazione di interi (da 0 a m-1) inserita.</li>
 </ul>
 
-<p>7) One-Time Pad:</p>
+<p>8) One-Time Pad:</p>
 
 <ul>
 <li>In caso di cifratura, il messaggio verrà cifrato secondo il cifrario One-Time Pad e verrà fornita la relativa chiave di decifratura</li>
 <li>In caso di decifratura, il messaggio verrà decifrato secondo il cifrario One-Time Pad, utilizzando la chiave inserita</li>
 </ul>
 
-<p>8) ENIGMA:</p>
+<p>9) ENIGMA:</p>
 
 <ul>
 <li>Il messaggio da cifrare/decifrare verrà cifrato/decifrato secondo il cifrario ENIGMA utilizzando la configurazione dei rotori e della plugboard selezionata dall'utente. Per configurare la plugboard occorre inserire l'alfabeto con gli scambi desiderati; ad esempio se si vuole scambiare la b con la s e la g con la v l'alfabeto da inserire sarà: 
 ascdefvhijklmnopqrbtugwxyz</li>
 </ul>
 
-<p>9) ?????????</p>
+<p>10) ?????????</p>
       </section>
 
     </div>
